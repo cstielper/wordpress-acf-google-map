@@ -1,0 +1,32 @@
+{
+  "name": "mm4-wordpress-acf-map",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Chris Stielper",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-es2015-rollup": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-better-rollup": "^3.1.0",
+    "gulp-if": "^2.0.2",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-uglify": "^3.0.0",
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-commonjs": "^9.1.0",
+    "rollup-plugin-eslint": "^4.0.0",
+    "rollup-plugin-node-resolve": "^3.3.0",
+    "whatwg-fetch": "^2.0.4",
+    "yargs": "^11.0.0"
+  },
+  "dependencies": {
+    "promise-polyfill": "^7.1.2"
+  }
+}
