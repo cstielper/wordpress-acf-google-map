@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Google Map</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div id="map-wrapper">
+		<div id="map-canvas"></div>
+	</div>
+	<script src="js/wp-acf-map.class.min.js"></script>
+	<script>
+		var mapStyles = [
+			{
+				featureType: 'water',
+				elementType: 'geometry',
+				stylers: [
+					{ saturation: -75 },
+					{ color: '#aed4f3' },
+					{ lightness: 35 }
+				]
+			},
+			{
+				featureType: 'road',
+				elementType: 'geometry',
+				stylers: [
+					{ color: '#d0d1d2' }
+				]
+			},
+			{
+				featureType: 'landscape',
+				elementType: 'geometry',
+				stylers: [
+					{ color: '#f1f1f1' }
+				]
+			},
+			{
+				featureType: 'poi',
+				elementType: 'geometry',
+				stylers: [
+					{ color: '#dcd9d4' }
+				]
+			},
+			{
+				featureType: "poi",
+				elementType: "labels",
+				stylers: [{
+					visibility: "off"
+				}]
+			},
+			{
+				featureType: 'transit',
+				elementType: 'labels',
+				stylers: [{
+					visibility: "off"
+				}]
+			}
+		];
+
+		var options = {
+			apiKey: '',
+			mapOptions: {
+				centerLat: 37.517259,
+				centerLng: -77.404439,
+				customMapStyles: mapStyles,
+				zoomControl: true
+			},
+			markerOptions: {
+				markersImgPath: 'imgs/',
+				centerMarkerImg: 'static-comm-marker.png',
+				centerMarkerInfoWindowContent: '<strong class="window-heading">Hello</strong><br>This should be some text.<br>And another line of it.',
+				addMarkers: true,
+				markersEndpoint: 'json/area_landmarks.json',
+				customSingleMarkers: true,
+				customMarkerImg: 'static-star.png',
+				customMarkerWidth: 40,
+				customMarkerHeight: 40
+			},
+			categoryOptions: {
+				addCategoryNav: true,
+				categoriesEndpoint: 'json/landmark_types.json',
+				addCategoryCount: true
+			},
+			directionsOptions: {
+				addDirections: true,
+				endingAddress: '1000 Carlisle Avenue, Richmond, VA 23231',
+				showFieldLabels: false,
+				startFieldPlaceholder: 'Enter Your Starting Address'
+			},
+			resetOptions: {
+				addResetButton: true,
+				resetButtonText: 'Reset'
+			}
+		}
+
+		var myMap = new WP_Map(options);
+		myMap.init();
+	</script>
+</body>
+</html>

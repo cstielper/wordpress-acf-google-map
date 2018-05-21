@@ -337,3 +337,6 @@ myMap.init();
 *Optional | Type: Boolean | Default: false* 
 2. **resetButtonText** - Customize the text of the reset button  
 *Optional | Type: String | Default: "Reset Map"*
+
+## Demo
+Download the files in the [demo folder](demo/) and add your registered Google Maps API key. Sample JSON responses have been provided in the demo file.
